@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication3.Pages.Warehouses.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Warehouse</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Warehouse.IngredientCode" />
+            <div class="form-group">
+                <label asp-for="Warehouse.IngredientName" class="control-label"></label>
+                <input asp-for="Warehouse.IngredientName" class="form-control" />
+                <span asp-validation-for="Warehouse.IngredientName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouse.Data" class="control-label"></label>
+                <input asp-for="Warehouse.Data" class="form-control" />
+                <span asp-validation-for="Warehouse.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouse.Volume" class="control-label"></label>
+                <input asp-for="Warehouse.Volume" class="form-control" />
+                <span asp-validation-for="Warehouse.Volume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouse.ShelfIfe" class="control-label"></label>
+                <input asp-for="Warehouse.ShelfIfe" class="form-control" />
+                <span asp-validation-for="Warehouse.ShelfIfe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouse.Cost" class="control-label"></label>
+                <input asp-for="Warehouse.Cost" class="form-control" />
+                <span asp-validation-for="Warehouse.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Warehouse.Provider" class="control-label"></label>
+                <input asp-for="Warehouse.Provider" class="form-control" />
+                <span asp-validation-for="Warehouse.Provider" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

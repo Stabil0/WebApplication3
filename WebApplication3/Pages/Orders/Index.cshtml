@@ -1,0 +1,72 @@
+﻿@page
+@model WebApplication3.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].Chec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].DishCodeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orde[0].EmployeeCodeNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Orde) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DishCodeNavigation.DishName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeCodeNavigation.Adress)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CustomerName">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerName">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
